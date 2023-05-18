@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Teleprompter</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1 id="numSlides">Number of Slides: </h1>
+  <p>Teleprompter</p>
+  <h3 id="slide_title">Enter a valid google slides URL:</h3>
+
+  <br>
+  <input type="text" id="input" class="text_input">
+  <div id="jsonContent"></div>
+  <!--Add buttons to initiate auth sequence and sign out-->
+  <button id="authorize_button" onclick="handleAuthClick()" class="button-auth">Authorize</button>
+  <button id="signout_button" onclick="handleSignoutClick()" class="button-signout">Sign Out</button>
+  <button id="upload_button" onclick="upload()" class="button-upload"">upload me</button>
+  <button id="load_button" onclick="listSlides()" class="button-auth">Load Slide</button>
+  <pre id="content" style="white-space: pre-wrap;"></pre>
+
+</body>
+<script src="script.js"></script>
+<script src="auth.js" type="text/javascript"></script>
+<script src="https://apis.google.com/js/api.js" async defer onload="gapiLoaded()"></script>
+<script src="https://accounts.google.com/gsi/client" async defer onload="gisLoaded()"></script>
+</html>
