@@ -1,0 +1,1 @@
+cmd_Release/binding.node := ln -f "../lib/mac/native/binding.node" "Release/binding.node" 2>/dev/null || (rm -rf "Release/binding.node" && cp -af "../lib/mac/native/binding.node" "Release/binding.node")
