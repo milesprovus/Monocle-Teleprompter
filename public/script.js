@@ -17,9 +17,6 @@ async function getTitle(){
     }
 }
 
-
-
-
 var outputStr = "";
 async function listSlides() {
     const url = document.getElementById('input').value;
@@ -142,6 +139,3 @@ async function upload() {
             console.error('Error:', error);
         });
 }
-
-const uploadButton = document.getElementById('upload_button');
-uploadButton.addEventListener('click', upload);
