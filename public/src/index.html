@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Teleprompter</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="style.css">
+<script defer src="index.bundle.js"></script></head>
+
+<body>
+  <h1 id="numSlides">Number of Slides: </h1>
+  <p>Teleprompter</p>
+  <p id="status">Disconnected</p>
+  <h3 id="slide_title">Enter a valid google slides URL:</h3>
+
+  <br>
+  <input type="text" id="input" class="text_input" onkeypress="getTitle()">
+  <div id="jsonContent"></div>
+  <button id="authorize_button" onclick="handleAuthClick()" class="button-auth">Authorize</button>
+  <br>
+  <button id="signout_button" onclick="handleSignoutClick()" class="button-signout">Sign Out</button>
+  <br>
+  <button id="upload_button" onclick="upload()" class="button-upload">upload me</button>
+  <br>
+  <button id="load_button" onclick="getNotes(); getTitle();" class="button-auth">Load Slide</button>
+  <button id="connectBtn">Connect!</button>
+  <pre id="content" style="white-space: pre-wrap;"></pre>
+
+</body>
+<script defer="defer" src="./src/index.bundle.js"></script>
+<script src="./src/script.js"></script>
+<script src="./src/auth.js" type="text/javascript"></script>
+<script src="https://apis.google.com/js/api.js" async defer onload="gapiLoaded()"></script>
+<script src="https://accounts.google.com/gsi/client" async defer onload="gisLoaded()"></script>
+</html>

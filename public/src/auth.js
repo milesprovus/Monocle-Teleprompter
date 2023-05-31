@@ -15,6 +15,8 @@ document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signout_button').style.visibility = 'hidden';
 document.getElementById('upload_button').style.visibility = 'hidden';
 document.getElementById('load_button').style.visibility = 'hidden';
+document.getElementById('input').style.visibility = 'hidden';
+document.getElementById('slide_title').style.visibility = 'hidden';
 
 /**
  * Callback after api.js is loaded.
@@ -69,6 +71,10 @@ function handleAuthClick() {
         document.getElementById('signout_button').style.visibility = 'visible';
         document.getElementById('authorize_button').innerText = 'Refresh';
         document.getElementById('load_button').style.visibility = 'visible';
+        document.getElementById('input').style.visibility = 'visible';
+        document.getElementById('slide_title').style.visibility = 'visible';
+        textInput = document.getElementById('input');
+        textInput.onkeypress = getTitle();
         await getTitle();
     };
 
@@ -95,5 +101,7 @@ function handleSignoutClick() {
         document.getElementById('signout_button').style.visibility = 'hidden';
         document.getElementById('load_button').style.visibility = 'hidden';
         document.getElementById('upload_button').style.visibility = 'hidden';
+        document.getElementById('jsonContent').innerText = "";
+        document.getElementById('slide_title').innerText = "Ender a valid google slides URL:"
     }
 }

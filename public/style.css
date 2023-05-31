@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
 body {
     background-color: rgb(132, 152, 171);
     padding: 5px;
+    font-family: 'PT Mono', monospace;
 }
 
 .text_input {
@@ -91,7 +93,6 @@ body {
     color: rgb(30, 138, 36);
     border-color: rgb(30, 138, 36);
     background-color: white;
-
     :hover {
         color: #fff;
         background-color: rgb(30, 138, 36);

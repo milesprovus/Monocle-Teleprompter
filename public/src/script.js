@@ -18,7 +18,7 @@ async function getTitle(){
 }
 
 var outputStr = "";
-async function listSlides() {
+async function getNotes() {
     const url = document.getElementById('input').value;
     const regex = /\/presentation\/d\/([a-zA-Z0-9-_]+)/;
     const match = url.match(regex);
@@ -34,10 +34,8 @@ async function listSlides() {
     const presentation = response.result;
     const slidesList = presentation.slides;
     console.log(slidesList);
-    const speakerNotes = [];
     const correspondingSlides = [];
     const notesJson = {};
-    const notesText = "";
     const numSlides = slidesList.length;
     let notesShape = "";
     let allNotes = [];
@@ -86,7 +84,6 @@ async function listSlides() {
     });
     console.log(slideDict);
     outputStr = JSON.stringify(slideDict, undefined, 2);
-    //document.getElementById('json').innerText = outputStr;
 
 
     // Create a Blob with the JSON data
@@ -97,6 +94,7 @@ async function listSlides() {
 function display() {
     var json = JSON.parse(outputStr)
     var jsonContentElement = document.getElementById('jsonContent');
+    jsonContentElement.innerHTML = '';
     var jsonHTML = '<ul>';
     for (var i = 0; i < json.length; i++) {
         var slide = json[i];
@@ -121,6 +119,7 @@ function display() {
       document.getElementById('signout_button').style.visibility = 'visible';
       document.getElementById('upload_button').style.visibility = 'visible';
       document.getElementById('authorize_button').innerText = 'Refresh';
+      document.getElementById('slide_title').style.display = 'block';
 };
 async function upload() {
     const jsonDataString = outputStr;
