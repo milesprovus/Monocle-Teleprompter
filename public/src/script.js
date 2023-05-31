@@ -1,4 +1,4 @@
-async function getTitle(){
+async function getTitle() {
     const url = document.getElementById('input').value;
     const regex = /\/presentation\/d\/([a-zA-Z0-9-_]+)/;
     const match = url.match(regex);
@@ -6,7 +6,7 @@ async function getTitle(){
     try {
         response = await gapi.client.slides.presentations.get({
             presentationId: match[1],
-        
+
         })
         const presentation = response.result;
         title = presentation['title']
@@ -42,22 +42,24 @@ async function getNotes() {
     console.log(numSlides)
     document.getElementById('numSlides').innerHTML = "There are " + numSlides + " Slides";
 
-
     for (const slide of slidesList) {
-        // Get the slide's notes page.
         const notesPage = slide.slideProperties.notesPage;
         let slideNotes = [];
-        // Gets an array of all of the speakers notes in the presentation
-        for (var y = 1; y < notesPage.pageElements[1].shape.text.textElements.length; y = y + 2) {
-            if (notesPage.pageElements[1].shape.text.textElements[y].textRun.content) {
-                notesShape = slide.slideProperties.notesPage.pageElements[1].shape.text.textElements[y].textRun.content;
-                notesShape = notesShape.replace(/\n/g, '');
-                slideNotes.push(notesShape);
-                console.log(notesShape);
-                correspondingSlides.push(notesPage["objectId"]);
+
+        if (notesPage.pageElements && notesPage.pageElements[1].shape && notesPage.pageElements[1].shape.text && notesPage.pageElements[1].shape.text.textElements) {
+            for (var y = 1; y < notesPage.pageElements[1].shape.text.textElements.length; y = y + 2) {
+                if (notesPage.pageElements[1].shape.text.textElements[y].textRun && notesPage.pageElements[1].shape.text.textElements[y].textRun.content) {
+                    notesShape = notesPage.pageElements[1].shape.text.textElements[y].textRun.content.replace(/\n/g, '');
+                    slideNotes.push(notesShape);
+                    console.log(notesShape);
+                    correspondingSlides.push(notesPage["objectId"]);
+                }
             }
-            else { notesShape = "No notes on this page" }
+        } else {
+            slideNotes.push("No Notes Present");
+            correspondingSlides.push(notesPage["objectId"]);
         }
+
         allNotes.push(slideNotes);
         console.log(allNotes);
     };
@@ -101,25 +103,25 @@ function display() {
         jsonHTML += '<li>';
         jsonHTML += 'Slide Number: ' + slide.slideNumber + '<br>';
         jsonHTML += 'Number of Notes: ' + slide.numOfNotes + '<br>';
-        
+
         jsonHTML += 'Notes:<ul>';
         // Iterate over each note in the notes array
         for (var j = 0; j < slide.notes.length; j++) {
-          jsonHTML += '<li>' + slide.notes[j] + '</li>';
+            jsonHTML += '<li>' + slide.notes[j] + '</li>';
         }
         jsonHTML += '</ul>';
-        
-        jsonHTML += '</li>';
-      }
-      
-      jsonHTML += '</ul>';
-      
-      jsonContentElement.innerHTML = jsonHTML;
 
-      document.getElementById('signout_button').style.visibility = 'visible';
-      document.getElementById('upload_button').style.visibility = 'visible';
-      document.getElementById('authorize_button').innerText = 'Refresh';
-      document.getElementById('slide_title').style.display = 'block';
+        jsonHTML += '</li>';
+    }
+
+    jsonHTML += '</ul>';
+
+    jsonContentElement.innerHTML = jsonHTML;
+
+    document.getElementById('signout_button').style.visibility = 'visible';
+    document.getElementById('upload_button').style.visibility = 'visible';
+    document.getElementById('authorize_button').innerText = 'Refresh';
+    document.getElementById('slide_title').style.display = 'block';
 };
 async function upload() {
     const jsonDataString = outputStr;
