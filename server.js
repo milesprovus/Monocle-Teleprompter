@@ -16,7 +16,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
     res.status(400).send('No file uploaded.');
   } else {
     const tempPath = req.file.path;
-    const targetPath = path.join(__dirname, 'uploads', predefinedFilename);
+    const targetPath = path.join(__dirname, 'tele', 'device files', predefinedFilename);
 
     if (path.extname(req.file.originalname).toLowerCase() !== '.json') {
       res.status(400).send('Only JSON files are allowed.');
