@@ -13,11 +13,11 @@ let gisInited = false;
 
 document.getElementById('authorize_button').style.visibility = 'hidden';
 document.getElementById('signout_button').style.visibility = 'hidden';
-document.getElementById('upload_button').style.visibility = 'hidden';
 document.getElementById('load_button').style.visibility = 'hidden';
 document.getElementById('input').style.visibility = 'hidden';
 document.getElementById('slide_title').style.visibility = 'hidden';
-
+document.getElementById('send').style.visibility = 'hidden';
+document.getElementById('connectBtn').style.visibility = 'hidden';
 /**
  * Callback after api.js is loaded.
  */
@@ -73,6 +73,7 @@ function handleAuthClick() {
         document.getElementById('load_button').style.visibility = 'visible';
         document.getElementById('input').style.visibility = 'visible';
         document.getElementById('slide_title').style.visibility = 'visible';
+        document.getElementById('send').style.visibility = 'hidden';
         textInput = document.getElementById('input');
         textInput.onkeypress = getTitle();
         await getTitle();
@@ -103,5 +104,6 @@ function handleSignoutClick() {
         document.getElementById('upload_button').style.visibility = 'hidden';
         document.getElementById('jsonContent').innerText = "";
         document.getElementById('slide_title').innerText = "Ender a valid google slides URL:"
+        
     }
 }

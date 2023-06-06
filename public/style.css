@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 body {
     background-color: rgb(132, 152, 171);
     padding: 5px;
-    font-family: 'PT Mono', monospace;
+    font-family: 'Roboto Mono', monospace;
 }
 
 .text_input {
     border: 2px, solid, black;
 }
 
-.connect{
+.connect {
     cursor: pointer;
     outline: 0;
     display: inline-block;
@@ -23,12 +24,16 @@ body {
     border-radius: .25rem;
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     color: #0dddfd;
-    border-color: #0dddfd;;
+    border-color: #0dddfd;
+    ;
     background-color: white;
+
     :hover {
         color: #fff;
-        background-color: #0dddfd;;
-        border-color: #0dddfd;;
+        background-color: #0dddfd;
+        ;
+        border-color: #0dddfd;
+        ;
     }
 }
 
@@ -48,12 +53,14 @@ body {
     color: #0d6efd;
     border-color: #0d6efd;
     background-color: white;
+
     :hover {
         color: #fff;
         background-color: #0d6efd;
         border-color: #0d6efd;
     }
 }
+
 .button-signout {
     cursor: pointer;
     outline: 0;
@@ -77,6 +84,7 @@ body {
         border-color: rgb(253, 21, 13);
     }
 }
+
 .button-upload {
     cursor: pointer;
     outline: 0;
@@ -93,12 +101,73 @@ body {
     color: rgb(30, 138, 36);
     border-color: rgb(30, 138, 36);
     background-color: white;
+
     :hover {
         color: #fff;
         background-color: rgb(30, 138, 36);
         border-color: rgb(30, 138, 36);
     }
 }
-#jsonContent{
+
+#jsonContent {
     list-style-type: none;
+}
+
+.send {
+    cursor: pointer;
+    outline: 0;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #22ae37;
+    border-color: #22ae37;
+    background-color: white;
+
+    :hover {
+        color: #fff;
+        background-color: #22ae37;
+        border-color: #22ae37;
+    }
+}
+
+.connect {
+    cursor: pointer;
+    outline: 0;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    color: #2230ae;
+    border-color: #2230ae;
+    background-color: white;
+
+    :hover {
+        cursor: not-allowed;
+        outline: 0;
+        display: inline-block;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid #ccc;
+        padding: 6px 12px;
+        font-size: 1rem;
+        border-radius: .25rem;
+        transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        color: #777;
+        background-color: #f5f5f5;
+    }
 }

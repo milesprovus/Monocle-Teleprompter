@@ -1,35 +1,19 @@
 {
-  "name": "monocle-teleprompter",
+  "name": "monocle-teleprompter-main",
   "version": "1.0.0",
-  "description": "A teleprompter helper for google slides using googles API",
+  "description": "A teleprompter application for Monocle by Brilliant Labs",
   "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
     "test": "node server",
-    "start": "node server.js",
-    "build": "webpack"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/milesprovus/Monocle-Teleprompter.git"
+    "start": "node server.js"
   },
   "keywords": [
-    "monocle-ar"
+    "AR",
+    "ar-monocle"
   ],
   "author": "Miles Provus",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/milesprovus/Monocle-Teleprompter/issues"
-  },
-  "homepage": "https://github.com/milesprovus/Monocle-Teleprompter#readme",
-  "dependencies": {
-    "html-webpack-plugin": "^5.5.1",
-    "jszip": "^3.10.1",
-    "lodash": "^4.17.21",
-    "monocle-node-cli": "github:endanke/monocle-node-cli#8244441",
-    "util": "^0.12.5"
-  },
-  "devDependencies": {
-    "webpack": "^5.84.0",
-    "webpack-cli": "^5.1.1"
-  }
+  "license": "ISC"
 }

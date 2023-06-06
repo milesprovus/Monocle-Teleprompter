@@ -20,14 +20,14 @@
   <br>
   <button id="signout_button" onclick="handleSignoutClick()" class="button-signout">Sign Out</button>
   <br>
-  <button id="upload_button" onclick="upload()" class="button-upload">upload me</button>
-  <br>
   <button id="load_button" onclick="getNotes(); getTitle();" class="button-auth">Load Slide</button>
-  <button id="connectBtn">Connect!</button>
+  <button id="connectBtn" class="connect" onclick="connect()">Connect!</button>
+  <button id="send" class="send" onclick="send()">Load Presentation</button>
+  <div id="output_data" data-notes=" "></div>
   <pre id="content" style="white-space: pre-wrap;"></pre>
 
 </body>
-<script defer="defer" src="./src/index.bundle.js"></script>
+<script src="./src/connect.js"></script>
 <script src="./src/script.js"></script>
 <script src="./src/auth.js" type="text/javascript"></script>
 <script src="https://apis.google.com/js/api.js" async defer onload="gapiLoaded()"></script>

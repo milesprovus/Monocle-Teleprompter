@@ -87,13 +87,14 @@ async function getNotes() {
     console.log(slideDict);
     outputStr = JSON.stringify(slideDict, undefined, 2);
 
-
     // Create a Blob with the JSON data
     const blob = new Blob([outputStr], { type: 'application/json' });
     display();
 }
 
 function display() {
+    var output = document.getElementById('output_data')
+    output.setAttribute("data-notes", outputStr)
     var json = JSON.parse(outputStr)
     var jsonContentElement = document.getElementById('jsonContent');
     jsonContentElement.innerHTML = '';
@@ -119,9 +120,9 @@ function display() {
     jsonContentElement.innerHTML = jsonHTML;
 
     document.getElementById('signout_button').style.visibility = 'visible';
-    document.getElementById('upload_button').style.visibility = 'visible';
     document.getElementById('authorize_button').innerText = 'Refresh';
     document.getElementById('slide_title').style.display = 'block';
+    document.getElementById('connectBtn').style.visibility = 'visible';
 };
 async function upload() {
     const jsonDataString = outputStr;
@@ -133,10 +134,10 @@ async function upload() {
         body: formData
     })
         .then(response => response.text())
-        .then(result => {
-            console.log(result); // Server response
+        .then(data => {
+            console.log(data); // Server response
         })
         .catch(error => {
             console.error('Error:', error);
         });
-}
+    }
