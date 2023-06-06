@@ -15,5 +15,8 @@
     "ar-monocle"
   ],
   "author": "Miles Provus",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.18.2"
+  }
 }
