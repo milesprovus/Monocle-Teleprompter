@@ -1,5 +1,5 @@
-const CLIENT_ID = '799933401682-pfkgrgs9re98s7ch30tc6t0eqiht5n0v.apps.googleusercontent.com';
-const API_KEY = 'AIzaSyB-X-ejFcyTCbqJVdtPtl8G4JQJNPv3rNw';
+const CLIENT_ID = '<CLIENT ID HERE>';
+const API_KEY = '<API KEY HERE>';
 
 // Discovery doc URL for APIs used by the quickstart
 const DISCOVERY_DOC = 'https://slides.googleapis.com/$discovery/rest?version=v1';
