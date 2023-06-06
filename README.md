@@ -2,6 +2,8 @@ A teleprompter application for the Monocle by Brilliant Labs
 
 Gathers speakers notes from a Google Slides presentation using the Google Slides API. Any text found in speakers notes of presentation will be displayed on the Monocle.
 
+<img src="https://github.com/milesprovus/Monocle-Teleprompter/blob/3d61ce84cd4100c91dcf45d0796d11534320021a/img/1.jpeg" height="400" width="300"><img src="https://github.com/milesprovus/Monocle-Teleprompter/blob/3d61ce84cd4100c91dcf45d0796d11534320021a/img/2.jpeg" height="400" width="300"><img src="https://github.com/milesprovus/Monocle-Teleprompter/blob/3d61ce84cd4100c91dcf45d0796d11534320021a/img/3.jpeg" height="400" width="300">
+
 # Setup: #
 
 ## Setup Credentials ##
