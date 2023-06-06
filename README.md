@@ -40,4 +40,4 @@ Run `node server` to start webpage at http://localhost:3000
 ## Notes ##
 * Works best if each line of notes is < 25 characters
 * Invalid speakers notes will likely be skipped during display
-* Currently doesn't control slideshow, just notes displayed on monocle
+* Currently doesn't control slideshow on connected device, just notes displayed on monocle
