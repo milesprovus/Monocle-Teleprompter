@@ -64,6 +64,6 @@ def split_string(string, split_point):
 
 
 
-touch.callback(touch.BOTH, nav)
+touch.callback(touch.EITHER, nav)
 
 main()
