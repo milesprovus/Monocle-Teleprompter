@@ -20,6 +20,7 @@ Notes displayed are based on slides from presentation and can be changed through
     2. Server-Side App Under Authorized redirect URIs, click Add URI & enter http://localhost:3000/
 8. Click Create
 9. Enter Client ID into top of `auth.js`
+10. Navigate to API library and enable the google slides API
 
 ## Create API Key ##
 1. In the Google Cloud console, go to Menu > APIs & Services > Credentials
